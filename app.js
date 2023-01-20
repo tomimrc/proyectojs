@@ -35,27 +35,34 @@ let nroEntrada = prompt("1- Ingresar su numero de entrada \n Máxima capacidad 1
         alert("Capacidad máxima superada")
     }
 
+            const opcion1 ={nombre: "Mortal Kombat", precio: 100, tipo: "lucha", plataforma: "ps4"};
+            const opcion2 ={nombre: "Mario kart", precio: 80, tipo: "aventura", plataforma: "nintendo"};
+            const opcion3 ={nombre: "Call of duty", precio: 120, tipo: "disparos", plataforma: "pc"}
+            const juegos = [ opcion1, opcion2, opcion3 ]
+            
+
 while (nroEntrada <= 15) {
     
-    let edad = prompt ("Debe ser mayor de 18 años para ver el menu\n Ingrese su edad :")
+    let edad = prompt ("Debe ser mayor de 18 años para ver el menu \n Ingrese su edad :")
     edad = parseInt(edad)
     
     if (edad >= 18){
+        let opcion = prompt("Ingrese una opción \n 1 - Mortal Kombat \n 2 - Mario Kart \n 3 - Call of Duty \n 4 - Volver")
+        
+        opcion = parseInt(opcion);
+        console.log(opcion)
 
-        let juego = prompt ("Ingrese el juego que desea \n 1 - Mortal Kombat \n 2 - Mario Kart \n 3 - God Of War \n 4 - Volver ")
-        juego = parseInt(juego)
-
-        switch (juego) {
+        switch (opcion) {
             case 1:
-                alert("Usted ha ingresado opcion " + juego + (" Mortal Kombat") )                
+                alert("Usted ha ingresado opcion " + juegos[0].nombre )                
                 break;
             
             case 2:
-                alert("Usted ha ingresado opcion " + juego + (" Mortal Kombat"))
+                alert("Usted ha ingresado opcion " + juegos[1].nombre)
                 break;
 
             case 3:
-                alert("Usted ha ingresado opcion " + juego + (" Mortal Kombat"))
+                alert("Usted ha ingresado opcion " + juegos[2].nombre)
                 break;
             
             case 4:
@@ -66,7 +73,7 @@ while (nroEntrada <= 15) {
                 alert("Opcion invalida")
                 break;
         }
-
+ 
         
         
     } else {
@@ -75,5 +82,12 @@ while (nroEntrada <= 15) {
         
     }
     
+    let buscar = prompt("Quieres buscar algun otro juego? \n  SI: INGRESA ALGUNO DE LOS PARAMETROS DE BUSQUEDA  \n - nombre: - Mortal Kombat - Mario kart - Call of duty \n - precio: - 100 - 80 - 120 \n - tipo: - lucha - aventura - disparos\n - plataforma: - ps4 - nintendo - pc\n NO: INGRESA \n - salir")
+    alert(buscar)
+    const busqueda = juegos.find((juego) => juegos[0].nombre === buscar);
+    console.log(busqueda);
+
 }
+
+
 
